@@ -1,0 +1,33 @@
+---
+description: Permanent visual and frontend design system for Shhh
+alwaysApply: true
+---
+
+# Shhh UI Design
+
+Whenever creating or modifying frontend/UI code in Shhh, follow **[docs/design/SHHH_DESIGN_SKILL.md](docs/design/SHHH_DESIGN_SKILL.md)** as the primary design authority.
+
+- Do not introduce a different visual language.
+- Reuse `--shhh-*` tokens and `src/components/shhh/*` primitives before new styling.
+- Prefer soft bubbles, pills, and floating surfaces over hard rectangular dashboard cards.
+- Light and dark themes must stay warm (cream / bedroom charcoal) — never sterile white/black.
+- shadcn may supply behavior only; Shhh owns shape, color, motion, and feel.
+- Mobile-first (iPhone / PWA safe areas); check small phone through desktop before done.
+- Typography: Nunito default UI; Gaegu only for wordmark / sparse handmade accents; Tajawal only as message Arabic fallback (see design skill).
+- App chrome is English/LTR. Message bodies use `dir="auto"` — bubble side follows sender, never language.
+- Respect `prefers-reduced-motion` and accessibility (contrast, focus, labels, 44px targets).
+
+## Completion checklist
+
+Before declaring UI work complete:
+
+1. Does this look like Shhh (intimate, soft, handmade-premium)?
+2. Does it reuse tokens and primitives?
+3. Soft shapes — no unnecessary rectangular bordered cards?
+4. Warm light and dark modes?
+5. Works on iPhone with safe areas?
+6. Reduced motion respected?
+7. Accessible?
+8. Does it look like generic shadcn or a corporate dashboard? If yes, redesign.
+
+Do not begin later-phase product work (media, calls, push) during a chat-only pass unless explicitly asked.

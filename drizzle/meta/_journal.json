@@ -1,0 +1,125 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1788206371090,
+      "tag": "0000_smart_ultimatum",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1788207822166,
+      "tag": "0001_tough_outlaw_kid",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1788209000000,
+      "tag": "0002_pin_sessions",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1788210000000,
+      "tag": "0003_user_password_hash",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1788300000000,
+      "tag": "0004_phase3_search",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1788400000000,
+      "tag": "0005_phase4_photos",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1788500000000,
+      "tag": "0006_phase5_albums",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1788600000000,
+      "tag": "0007_phase6_video",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1788700000000,
+      "tag": "0008_phase7_voice",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1788800000000,
+      "tag": "0009_phase8_interactions",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1788900000000,
+      "tag": "0010_phase9_stickers",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1789000000000,
+      "tag": "0011_phase10_doodles",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1789100000000,
+      "tag": "0012_phase11_appearance",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1789200000000,
+      "tag": "0013_phase11_themes",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1789300000000,
+      "tag": "0014_phase12_calls",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1789400000000,
+      "tag": "0015_phase14_privacy",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1789500000000,
+      "tag": "0016_phase15_music",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Shhh">
+  <rect width="512" height="512" rx="112" fill="#f3efe8"/>
+  <circle cx="256" cy="248" r="132" fill="#4a756c"/>
+  <path
+    d="M214 228c18-28 66-28 84 0"
+    fill="none"
+    stroke="#f3efe8"
+    stroke-width="22"
+    stroke-linecap="round"
+  />
+  <path
+    d="M228 268c12-16 44-16 56 0"
+    fill="none"
+    stroke="#f3efe8"
+    stroke-width="18"
+    stroke-linecap="round"
+  />
+  <circle cx="256" cy="308" r="10" fill="#f3efe8"/>
+</svg>
