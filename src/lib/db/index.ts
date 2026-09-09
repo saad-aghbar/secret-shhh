@@ -32,7 +32,7 @@ export function getDb() {
       connectionTimeoutMillis: 10_000,
       ssl: isLoopbackDatabaseUrl(connectionString)
         ? undefined
-        : { rejectUnauthorized: true },
+        : { rejectUnauthorized: false },
     });
   }
 
