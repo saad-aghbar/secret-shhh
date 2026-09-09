@@ -18,6 +18,7 @@
     "db:studio": "drizzle-kit studio",
     "auth:hash-pin": "tsx scripts/hash-pin.ts",
     "r2:smoke": "tsx scripts/r2-smoke.ts",
+    "r2:cors": "tsx scripts/r2-configure-cors.ts",
     "r2:cors-probe": "tsx scripts/r2-cors-probe.ts",
     "r2:multipart-smoke": "tsx scripts/r2-multipart-smoke.ts",
     "livekit:smoke": "tsx scripts/livekit-smoke.ts",
@@ -71,6 +72,9 @@
     "tsx": "^4.23.13",
     "typescript": "^5",
     "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   },
   "packageManager": "pnpm@9.15.9"
 }

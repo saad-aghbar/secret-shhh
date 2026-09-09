@@ -57,7 +57,7 @@ E2E uses `E2E_PASSWORD` (defaults to the local-dev PIN if unset). Never put that
 
 See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) and [docs/PRODUCTION_CHECKLIST.md](docs/PRODUCTION_CHECKLIST.md).
 
-Set `NEXT_PUBLIC_APP_URL` to the public **https** origin before launch. Update R2 CORS to that exact origin.
+Production URL: `https://shhh-one-zeta.vercel.app`. Set `NEXT_PUBLIC_APP_URL` to that origin (no trailing slash). Update R2 CORS to that exact origin. A future custom domain is a configuration change, not an application rewrite.
 
 ## Docs
 

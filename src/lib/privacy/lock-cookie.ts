@@ -6,7 +6,8 @@ export const HIDDEN_AT_COOKIE = "shhh_hidden_at";
 export function lockCookieOptions(maxAgeSeconds: number) {
   return {
     httpOnly: true as const,
-    secure: process.env.NODE_ENV === "production",
+    secure:
+      process.env.NODE_ENV === "production" || process.env.VERCEL_ENV === "production",
     sameSite: "lax" as const,
     path: "/",
     maxAge: maxAgeSeconds,

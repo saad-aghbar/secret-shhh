@@ -1,26 +1,29 @@
 # Production checklist
 
+Canonical production origin: `https://shhh-one-zeta.vercel.app`
+
 ## Before deploy
 
 - [ ] Database backup / export verified
 - [ ] Production env loaded on Vercel (names from `.env.example`)
-- [ ] `NEXT_PUBLIC_APP_URL` is the public https origin
+- [ ] `NEXT_PUBLIC_APP_URL` is `https://shhh-one-zeta.vercel.app` (no trailing slash)
 - [ ] `SESSION_SECRET` is unique and 32+ characters
-- [ ] PIN hashes set (`AUTHORIZED_USER_*_PIN_HASH`)
-- [ ] `DATABASE_URL` points at production Postgres (not a local URL)
-- [ ] R2 bucket is private; CORS origin = `NEXT_PUBLIC_APP_URL`
+- [ ] PIN hashes set (`AUTHORIZED_USER_*_PIN_HASH`, `base64:…` Argon2 form)
+- [ ] `DATABASE_URL` points at **hosted** Postgres (not localhost)
+- [ ] R2 bucket is private; CORS includes `https://shhh-one-zeta.vercel.app`
 - [ ] LiveKit `wss://` URL + server keys (not `NEXT_PUBLIC_*`)
 - [ ] Optional YouTube / Spotify keys if you want search
-- [ ] Supabase Site URL + redirect URLs match production
+- [ ] Supabase Auth Site URL / redirects **not required** (Realtime only)
 - [ ] Supabase `anon`/`authenticated` table grants revoked
-- [ ] `pnpm db:migrate` applied to production
+- [ ] `pnpm db:migrate` applied to the hosted production database
 - [ ] `E2E_FORCE_CHAT_FAIL` unset
+- [ ] `E2E_PASSWORD` unset on Vercel
 - [ ] `STORAGE_PROVIDER` is not `test`
-- [ ] `pnpm build` succeeds
+- [ ] `pnpm build` succeeds with `VERCEL_ENV=production` and the production app URL
 
 ## After deploy
 
-- [ ] HTTPS works
+- [ ] HTTPS works at `https://shhh-one-zeta.vercel.app`
 - [ ] `/api/health` returns ok
 - [ ] Login as Saad
 - [ ] Login as Tala

@@ -12,6 +12,13 @@ describe("parsePublicEnv", () => {
     expect(env.NEXT_PUBLIC_APP_URL).toBe("http://localhost:3000");
     expect(env.NEXT_PUBLIC_APP_NAME).toBe("Shhh");
   });
+
+  it("accepts the production https origin and strips a trailing slash", () => {
+    const env = parsePublicEnv({
+      NEXT_PUBLIC_APP_URL: "https://shhh-one-zeta.vercel.app/",
+    });
+    expect(env.NEXT_PUBLIC_APP_URL).toBe("https://shhh-one-zeta.vercel.app");
+  });
 });
 
 describe("parseServerEnv", () => {

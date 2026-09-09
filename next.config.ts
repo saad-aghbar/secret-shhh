@@ -22,6 +22,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   transpilePackages: ["heic-to"],
+  serverExternalPackages: ["@node-rs/argon2", "pg"],
   // Keep Turbopack rooted to this package (avoids parent lockfile confusion).
   turbopack: {
     root: path.join(__dirname),

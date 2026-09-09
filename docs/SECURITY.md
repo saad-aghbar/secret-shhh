@@ -41,7 +41,7 @@ Never commit or `NEXT_PUBLIC_*` these:
 - YouTube / Spotify secrets
 - Supabase `service_role`
 
-Production startup (`instrumentation.ts`) fails if required names are missing or `NEXT_PUBLIC_APP_URL` is localhost/http. Errors list **names only**.
+Production startup (`instrumentation.ts`) fails if required names are missing or `NEXT_PUBLIC_APP_URL` is localhost/http. Production must use `https://shhh-one-zeta.vercel.app` until a custom domain is configured. Errors list **names only**.
 
 ## R2
 

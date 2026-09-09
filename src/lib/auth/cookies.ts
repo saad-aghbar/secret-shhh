@@ -7,7 +7,8 @@ export async function setSessionCookie(token: string, maxAgeSeconds: number) {
   const jar = await cookies();
   jar.set(SESSION_COOKIE, token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure:
+      process.env.NODE_ENV === "production" || process.env.VERCEL_ENV === "production",
     sameSite: "lax",
     path: "/",
     maxAge: maxAgeSeconds,
@@ -18,7 +19,8 @@ export async function clearSessionCookie() {
   const jar = await cookies();
   jar.set(SESSION_COOKIE, "", {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure:
+      process.env.NODE_ENV === "production" || process.env.VERCEL_ENV === "production",
     sameSite: "lax",
     path: "/",
     maxAge: 0,
