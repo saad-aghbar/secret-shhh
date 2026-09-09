@@ -1,0 +1,50 @@
+---
+description: Required gates before any Shhh production update (classify, verify, then ship)
+alwaysApply: true
+---
+
+# Production updates
+
+Before any production update, follow this sequence. Do not skip gates. Do not deploy automatically.
+
+## 1. Classify first
+
+Tell the user whether this update is one or more of:
+
+- code-only
+- env-variable change
+- database migration
+- R2/CORS change
+- LiveKit/provider change
+
+## 2. Do not deploy until all of these pass
+
+- lint: `pnpm lint`
+- tests: `pnpm test`
+- build: `pnpm build` (for production confidence, also with `VERCEL_ENV=production` and production `NEXT_PUBLIC_APP_URL`)
+- migration risk is assessed (none / additive / breaking; backup needed?)
+
+Stop and report failures. Do not commit, push, or ship until they pass.
+
+## 3. If there is a DB migration
+
+- Create it with `pnpm db:generate` (Drizzle). Never invent SQL that bypasses the migration pipeline.
+- Test it locally: `pnpm db:migrate` against local Postgres only.
+- Tell the user the exact production order, typically: backup hosted DB → apply `DATABASE_URL='<hosted>' pnpm db:migrate` → then ship the app (or the reverse if the new code is backward-compatible — say which).
+- Do **not** reset or seed production. Do **not** run migrate against localhost and call it production.
+
+See `docs/DEPLOYMENT.md` and `docs/PRODUCTION_CHECKLIST.md`.
+
+## 4. If production env changes
+
+- Tell the user the **exact variable names**.
+- Never print secret values, hashes, connection strings, or key material.
+
+## 5. When ready (only after gates pass)
+
+1. Commit (when the user asked to ship, or after they confirm).
+2. Push to the branch connected to Vercel (existing **Shhh** project — do not create a second project).
+3. Verify the Vercel deployment succeeded.
+4. Smoke test the live production URL `https://shhh-one-zeta.vercel.app` (HTTPS, `/api/health`, and the flows this change actually touches). Use `docs/PRODUCTION_CHECKLIST.md` after-deploy items as the menu.
+
+Migrations never run on app boot. R2 CORS and LiveKit/provider changes are configuration, not implicit in a code push.
